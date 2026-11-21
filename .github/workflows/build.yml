@@ -3,7 +3,7 @@ name: Build Sky Customizer
 
 on:
   push:
-    branches: [main]
+    branches: [main, galaxy-sky]
   workflow_dispatch:
 
 jobs:
