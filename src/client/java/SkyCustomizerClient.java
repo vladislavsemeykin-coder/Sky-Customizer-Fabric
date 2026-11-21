@@ -44,7 +44,18 @@ public static boolean isGalaxySky() {
     return mode == 8;
 }
 
+
+public static boolean isGalaxySky() {
+    return mode == 8;
+}
+
 public static int getSkyColor() {
+    if (mode == 0 || isGalaxySky()) {
+        return -1;
+    }
+    return mode == MODES.length - 1 ? customColor : COLORS[mode];
+}
+
     if (mode == 0 || isGalaxySky()) {
         return -1;
     }
