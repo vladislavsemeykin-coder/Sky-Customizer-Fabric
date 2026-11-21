@@ -39,9 +39,18 @@ public final class SkyCustomizerClient implements ClientModInitializer {
         });
     }
 
-    public static int getSkyColor() {
-        return mode == 0 ? -1 : (mode == MODES.length - 1 ? customColor : COLORS[mode]);
+
+public static boolean isGalaxySky() {
+    return mode == 8;
+}
+
+public static int getSkyColor() {
+    if (mode == 0 || isGalaxySky()) {
+        return -1;
     }
+    return mode == MODES.length - 1 ? customColor : COLORS[mode];
+}
+
 
     public static float starBrightness(float original) {
         if (brightStars && (mode == 6 || mode == 7)) return Math.max(original, mode == 7 ? 0.9f : 0.55f);
