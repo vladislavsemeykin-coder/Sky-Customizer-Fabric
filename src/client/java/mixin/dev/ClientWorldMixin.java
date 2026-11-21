@@ -1,3 +1,4 @@
+
 package dev.skycustomizer.mixin;
 
 import dev.skycustomizer.SkyCustomizerClient;
@@ -10,14 +11,36 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientWorld.class)
 public abstract class ClientWorldMixin {
-    @Inject(method = "getSkyColor(Lnet/minecraft/util/math/Vec3d;F)I", at = @At("RETURN"), cancellable = true)
-    private void skycustomizer$color(Vec3d pos, float delta, CallbackInfoReturnable<Integer> cir) {
+
+    @Inject(
+        method = "method_23777(Lnet/minecraft/class_243;F)I",
+        at = @At("RETURN"),
+        cancellable = true,
+        remap = false
+    )
+    private void skycustomizer$color(
+            Vec3d pos,
+            float delta,
+            CallbackInfoReturnable<Integer> cir) {
+
         int color = SkyCustomizerClient.getSkyColor();
-        if (color != -1) cir.setReturnValue(color);
+        if (color != -1) {
+            cir.setReturnValue(color);
+        }
     }
 
-    @Inject(method = "getStarBrightness(F)F", at = @At("RETURN"), cancellable = true)
-    private void skycustomizer$stars(float delta, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(SkyCustomizerClient.starBrightness(cir.getReturnValue()));
+    @Inject(
+        method = "method_23787(F)F",
+        at = @At("RETURN"),
+        cancellable = true,
+        remap = false
+    )
+    private void skycustomizer$stars(
+            float delta,
+            CallbackInfoReturnable<Float> cir) {
+
+        cir.setReturnValue(
+            SkyCustomizerClient.starBrightness(cir.getReturnValue())
+        );
     }
 }
