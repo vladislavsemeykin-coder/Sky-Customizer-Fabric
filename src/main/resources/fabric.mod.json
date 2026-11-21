@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "skycustomizer",
+  "version": "${version}",
+  "name": "Sky Customizer",
+  "description": "Client-side sky color presets and a customizable RGB sky for Fabric 1.21.4.",
+  "authors": ["Sky Customizer"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.skycustomizer.SkyCustomizerClient"]
+  },
+  "mixins": ["skycustomizer.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
