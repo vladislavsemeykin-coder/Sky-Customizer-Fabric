@@ -16,8 +16,9 @@ import java.util.Properties;
 
 public final class SkyCustomizerClient implements ClientModInitializer {
     private static final Path CONFIG = FabricLoader.getInstance().getConfigDir().resolve("skycustomizer.properties");
-    private static final String[] MODES = {"Vanilla", "Sky Blue", "Rose", "Sunset", "Purple", "Emerald", "Midnight", "Space", "Custom RGB"};
-    private static final int[] COLORS = {0, 0x62BFFF, 0xFF82CC, 0xFF8950, 0x9656D7, 0x30CDA8, 0x0B173B, 0x100727, 0x70B3FF};
+    private static final String[] MODES = {"Vanilla", "Sky Blue", "Rose", "Sunset", "Purple", "Emerald", "Midnight", "Space", "Galaxy Sky", "Custom RGB"};
+    private static final int[] COLORS = {0, 0x62BFFF, 0xFF82CC, 0xFF8950, 0x9656D7, 0x30CDA8, 0x0B173B, 0x100727, 0x00251F, 0x70B3FF};
+
 
     private static int mode = 0;
     private static int customColor = 0x70B3FF;
